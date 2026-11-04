@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menezes Relógios | Elegância e Precisão no Seu Pulso</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#f3e5ab',
+                            500: '#d4af37',
+                            600: '#aa8c2c',
+                            700: '#80681e',
+                        },
+                        darkbg: '#0f0f11',
+                        darkcard: '#16161a',
+                        darkborder: '#26262e'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f11;
+            color: #e5e7eb;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fff2be 0%, #d4af37 50%, #aa8c2c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+        }
+        .gold-border-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+        }
+        .bg-gold-gradient:hover {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #26262e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-200 antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5573981041210?text=Ol%C3%A1!%20Gostaria%20de%20atendimento%20personalizado%20sobre%20os%20rel%C3%B3gios." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center border border-green-400/30 group" title="Atendimento WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out font-medium text-sm ml-0 group-hover:ml-2">Falar com Consultor</span>
+    </a>
+
+    <!-- Navbar (Fixed and Stable) -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-darkbg/90 backdrop-blur-md border-b border-darkborder/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Left Actions (Search) -->
+            <div class="hidden md:flex items-center gap-4 w-1/3">
+                <div class="relative">
+                    <input type="text" id="searchInputDesktop" oninput="filterProducts()" placeholder="Buscar relógio..." class="bg-darkcard border border-darkborder rounded-full text-xs px-4 py-2 pl-9 focus:outline-none focus:border-gold-500/80 w-40 focus:w-56 transition-all text-gray-200 placeholder-gray-500">
+                    <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-2.5"></i>
+                </div>
+            </div>
+
+            <!-- Brand Logo (Centered) -->
+            <div class="flex justify-center items-center w-full md:w-1/3 mx-auto">
+                <a href="#hero" class="flex justify-center items-center">
+                    <img src="img/logo.png" alt="Menezes Relógios" style="max-height: 80px; width: auto; margin-left: 50px;">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation Right -->
+            <nav class="hidden md:flex items-center justify-end gap-6 text-sm font-medium w-1/3">
+                <a href="#hero" class="hover:text-gold-500 transition-colors py-1 relative group">
+                    Início
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#catalogo" class="hover:text-gold-500 transition-colors py-1 relative group">
+                    Catálogo
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#diferenciais" class="hover:text-gold-500 transition-colors py-1 relative group">
+                    Diferenciais
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="menuBtn" class="text-gray-300 hover:text-gold-500 p-2 focus:outline-none" aria-label="Abrir Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-darkcard border-b border-darkborder px-6 py-6 transition-all">
+            <div class="flex flex-col gap-4">
+                <div class="relative mb-2">
+                    <input type="text" id="searchInputMobile" oninput="syncAndFilterMobile()" placeholder="Buscar modelo ou marca..." class="bg-darkbg border border-darkborder rounded-lg text-sm px-4 py-2.5 pl-10 w-full focus:outline-none focus:border-gold-500 text-gray-200">
+                    <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-3"></i>
+                </div>
+                <a href="#hero" onclick="toggleMenu()" class="text-base font-medium py-2 border-b border-darkborder/50 hover:text-gold-500">Início</a>
+                <a href="#catalogo" onclick="toggleMenu()" class="text-base font-medium py-2 border-b border-darkborder/50 hover:text-gold-500">Catálogo</a>
+                <a href="#diferenciais" onclick="toggleMenu()" class="text-base font-medium py-2 border-b border-darkborder/50 hover:text-gold-500">Diferenciais</a>
+                <a href="https://wa.me/5573981041210?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20atendente." target="_blank" class="mt-2 text-center bg-gold-gradient text-black font-semibold py-3 rounded-lg text-sm tracking-wider uppercase">Falar no WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-28 pb-16 md:pt-40 md:pb-32 overflow-hidden flex items-center min-h-[70vh]">
+        <!-- Background Ambient Lights -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-72 h-72 bg-gold-600/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col items-center text-center">
+                <!-- Hero Content -->
+                <div class="max-w-3xl text-center">
+                    <h1 class="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
+                        Exclusividade e Distinção <br class="hidden sm:inline"/>
+                        <span class="gold-gradient-text">Para Todos os Momentos.</span>
+                    </h1>
+                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-8">
+                        Selecione o modelo perfeito para expressar o seu estilo com máxima precisão e sofisticação.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#catalogo" class="w-full sm:w-auto px-8 py-4 bg-gold-gradient hover:shadow-lg hover:shadow-gold-500/20 text-black font-semibold rounded-lg text-sm tracking-wider uppercase transition-all duration-300 text-center flex items-center justify-center gap-2 group">
+                            Explorar Catálogo
+                            <i data-lucide="arrow-down" class="w-4 h-4 transition-transform group-hover:translate-y-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Metrics / Proof -->
+                    <div class="grid grid-cols-3 gap-1 mt-7 pt-8 border-t border-darkborder/60 max-w-lg mx-auto">
+                        <div>
+                            <p class="font-playfair text-2xl font-bold text-white">100%</p>
+                            <p class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Originais</p>
+                        </div>
+                        <div>
+                            <p class="font-playfair text-2xl font-bold text-white">Até 4x</p>
+                            <p class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Sem juros</p>
+                        </div>
+                        <div>
+                            <p class="font-playfair text-2xl font-bold text-white">6 meses</p>
+                            <p class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Garantia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters & Catalog Section -->
+    <section id="catalogo" class="py-16 bg-darkbg border-t border-darkborder/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Categories & Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-8" id="filterContainer">
+                <button onclick="filterCategory('all')" class="filter-btn active px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-gold-gradient text-black shadow-md" data-category="all">
+                    Todos os Modelos
+                </button>
+                <button onclick="filterCategory('masculino')" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-darkcard text-gray-400 border border-darkborder hover:border-gold-500/50 hover:text-white" data-category="masculino">
+                    Masculinos
+                </button>
+                <button onclick="filterCategory('feminino')" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-darkcard text-gray-400 border border-darkborder hover:border-gold-500/50 hover:text-white" data-category="feminino">
+                    Femininos
+                </button>
+                <button onclick="filterCategory('automatico')" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-darkcard text-gray-400 border border-darkborder hover:border-gold-500/50 hover:text-white" data-category="automatico">
+                    Automáticos
+                </button>
+                <button onclick="filterCategory('cronografo')" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-darkcard text-gray-400 border border-darkborder hover:border-gold-500/50 hover:text-white" data-category="cronografo">
+                    Cronógrafo
+                </button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="productGrid">
+                <!-- Dynamic Content Rendered via JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden text-center py-16 bg-darkcard rounded-2xl border border-darkborder">
+                <i data-lucide="search-x" class="w-12 h-12 text-gray-500 mx-auto mb-4"></i>
+                <h3 class="text-lg font-semibold text-white mb-2">Nenhum relógio encontrado</h3>
+                <p class="text-sm text-gray-400 mb-6">Tente alterar os termos de busca ou filtros selecionados.</p>
+                <button onclick="resetFilters()" class="px-6 py-2.5 bg-gold-500/10 border border-gold-500/40 text-gold-400 text-xs font-semibold tracking-wider uppercase rounded-lg hover:bg-gold-500/20">
+                    Limpar Filtros
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Detalhes do Produto -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-darkcard border border-darkborder rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl relative transform transition-all">
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 bg-darkbg/80 text-gray-400 hover:text-white p-2 rounded-full border border-darkborder transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="h-64 md:h-full bg-darkbg relative">
+                    <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 md:p-8 flex flex-col justify-between">
+                    <div>
+                        <span id="modalCategory" class="text-[10px] font-bold tracking-widest text-gold-500 uppercase"></span>
+                        <h3 id="modalTitle" class="font-playfair text-2xl font-bold text-white mt-1 mb-2"></h3>
+                        <p id="modalPrice" class="text-2xl font-bold text-gold-400 mb-4"></p>
+                        <p id="modalDesc" class="text-xs text-gray-400 leading-relaxed mb-6"></p>
+
+                        <div class="space-y-2 mb-6">
+                            <h4 class="text-xs font-semibold uppercase text-gray-300 tracking-wider">Especificações Principais:</h4>
+                            <ul id="modalSpecs" class="text-xs text-gray-400 space-y-1"></ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button id="modalBuyBtn" onclick="" class="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3.5 rounded-lg text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            Comprar via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Differentials / Por que nos escolher -->
+    <section id="diferenciais" class="py-20 bg-darkcard border-t border-b border-darkborder/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-[0.2em] text-gold-500 uppercase">Garantia de Satisfação</span>
+                <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Diferenciais Menezes</h2>
+                <p class="text-gray-400 text-sm">Tradição, transparência e o compromisso de entregar o melhor atendimento em cada compra.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-darkbg p-8 rounded-2xl border border-darkborder/80 hover:border-gold-500/40 transition-all duration-300 text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-500 group-hover:text-black transition-colors duration-300">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-gold-500 group-hover:text-black"></i>
+                    </div>
+                    <h3 class="font-playfair text-lg font-bold text-white mb-2">Garantia de 2 Anos</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Todos os nossos relógios acompanham certificado de autenticidade e cobertura completa contra defeitos.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-darkbg p-8 rounded-2xl border border-darkborder/80 hover:border-gold-500/40 transition-all duration-300 text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-500 group-hover:text-black transition-colors duration-300">
+                        <i data-lucide="truck" class="w-7 h-7 text-gold-500 group-hover:text-black"></i>
+                    </div>
+                    <h3 class="font-playfair text-lg font-bold text-white mb-2">Envio Seguro & Rápido</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Entregas expressas e seguras com seguro total contra extravio para todo o Brasil.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-darkbg p-8 rounded-2xl border border-darkborder/80 hover:border-gold-500/40 transition-all duration-300 text-center group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-500 group-hover:text-black transition-colors duration-300">
+                        <i data-lucide="award" class="w-7 h-7 text-gold-500 group-hover:text-black"></i>
+                    </div>
+                    <h3 class="font-playfair text-lg font-bold text-white mb-2">Qualidade Premium</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Materiais nobres como Aço Inoxidável 316L, Cristal de Safira e movimentos ultra precisos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkcard border-t border-darkborder text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full border border-gold-500/50 flex items-center justify-center bg-darkbg">
+                            <i data-lucide="watch" class="w-4 h-4 text-gold-500"></i>
+                        </div>
+                        <span class="font-playfair text-lg font-bold gold-gradient-text uppercase">Menezes Relógios</span>
+                    </div>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        A melhor experiência em alta relojoaria do mercado. Coleções exclusivas com padrão internacional de acabamento.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="text-xs font-semibold uppercase text-white tracking-widest mb-4">Navegação</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#hero" class="hover:text-gold-500 transition-colors">Início</a></li>
+                        <li><a href="#catalogo" class="hover:text-gold-500 transition-colors">Catálogo de Relógios</a></li>
+                        <li><a href="#diferenciais" class="hover:text-gold-500 transition-colors">Por Que Escolher</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact & Support -->
+                <div>
+                    <h4 class="text-xs font-semibold uppercase text-white tracking-widest mb-4">Atendimento</h4>
+                   <ul class="space-y-3">
+                    <!-- Telefone -->
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-5 text-gold-500"></i>
+                        <span>(73) 98104-1210</span>
+                    </li>
+                    
+                    <!-- Instagram -->
+                    <li class="flex items-center gap-2">
+                        <i class="fa-brands fa-instagram text-gold-500 text-base"></i>
+                        <a href="https://instagram.com" target="_blank" class="hover:text-gold-500 transition-colors">@menezesrelogios</a>
+                    </li>
+                    
+                    <!-- WhatsApp (Atendimento 24h) -->
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-5 text-gold-500"></i>
+                        <span>Atendimento 24h via WhatsApp</span>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="mt-12 pt-8 border-t border-darkborder/60 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Menezes Relógios. Todos os direitos reservados.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="hover:text-gray-400">Termos de Uso</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-gray-400">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Database de Produtos
+        const products = [
+            {
+                id: '1',
+                name: 'Relógio Curren',
+                category: 'masculino',
+                price: 'R$ 199,00',
+                image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop',
+                badge: 'Mais Vendido',
+                description: 'O Menezes Royal Chrono Gold é o ápice da sofisticação masculina. Caixa reforçada com detalhes banhados a ouro 18k e mostrador multifuncional.',
+                specs: [
+                    'Vidro: Cristal de Safira Anti-riscos',
+                    'Movimento: Quartz Suíço de Precisão',
+                    'Caixa: Aço Inoxidável 316L (42mm)',
+                    'Resistência à água: 10 ATM (100 metros)',
+                    'Pulseira: Aço ajustável com fecho duplo'
+                ]
+            },
+            {
+                id: '2',
+                name: 'Menezes Master Automatic Silver',
+                category: 'automatico',
+                price: 'R$ 1.890,00',
+                image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop',
+                badge: 'Automático',
+                description: 'Movido pelo movimento do seu pulso. O Master Automatic possui mecanismo aparente no fundo e acabamento espelhado em aço cirúrgico.',
+                specs: [
+                    'Mecanismo: Automático com reserva de 42h',
+                    'Vidro: Safira resistente a impactos',
+                    'Caixa: Aço Inoxidável Polido (41mm)',
+                    'Resistência à água: 5 ATM',
+                    'Fundo: Esqueleto Transparente'
+                ]
+            },
+            {
+                id: '3',
+                name: 'Menezes Lady Diamond Rose',
+                category: 'feminino',
+                price: 'R$ 980,00',
+                image: 'https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=800&auto=format&fit=crop',
+                badge: 'Lançamento',
+                description: 'Delicadeza e brilho singular. Projetado para mulheres exigentes com caixa Rose Gold e marcadores em cristais no mostrador.',
+                specs: [
+                    'Vidro: Cristal Mineral Endurecido',
+                    'Movimento: Quartz Premium',
+                    'Caixa: Rose Gold Ultra Fina (34mm)',
+                    'Resistência à água: 3 ATM',
+                    'Pulseira: Couro legítimo macio ou Aço Mesh'
+                ]
+            },
+            {
+                id: '4',
+                name: 'Menezes Black Stealth Chrono',
+                category: 'cronografo',
+                price: 'R$ 1.450,00',
+                image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800&auto=format&fit=crop',
+                badge: 'Cronógrafo',
+                description: 'Visual All-Black moderno com função cronógrafo de alta precisão. Ideal para o dia a dia e ocasiões especiais.',
+                specs: [
+                    'Vidro: Cristal Safira',
+                    'Movimento: Quartz com Cronógrafo',
+                    'Caixa: Aço Preto Fosco PVD (44mm)',
+                    'Resistência à água: 10 ATM',
+                    'Função: Cronômetro integrado'
+                ]
+            },
+            {
+                id: '5',
+                name: 'Menezes Grace Mother of Pearl',
+                category: 'feminino',
+                price: 'R$ 1.150,00',
+                image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop',
+                badge: 'Exclusivo',
+                description: 'Mostrador com acabamento em madrepérola natural que reflete nuances de cor conforme a luz. Uma verdadeira joia em forma de relógio.',
+                specs: [
+                    'Mostrador: Madrepérola Natural',
+                    'Movimento: Quartz Japonês',
+                    'Caixa: Aço Prateado com detalhes Dourados (36mm)',
+                    'Resistência à água: 5 ATM',
+                    'Pulseira: Bicolor Inox/Dourado'
+                ]
+            },
+            {
+                id: '6',
+                name: 'Menezes Executive Chrono Gold',
+                category: 'cronografo',
+                price: 'R$ 2.190,00',
+                image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop',
+                badge: 'Cronógrafo Luxo',
+                description: 'Sofisticação e cronometragem avançada em um design robusto banhado a ouro.',
+                specs: [
+                    'Movimento: Quartz Cronógrafo de Alta Precisão',
+                    'Vidro: Cristal de Safira',
+                    'Caixa: Aço Inoxidável Ouro Nobre (43mm)',
+                    'Resistência à água: 5 ATM',
+                    'Pulseira: Aço com banho especial'
+                ]
+            }
+        ];
+
+        let currentCategory = 'all';
+
+        // Função centralizada para redirecionar ao WhatsApp com os dados do relógio
+        function comprarRelogio(nome, preco) {
+            const numeroWhatsApp = "5573981041210";
+            const mensagem = `Olá! Gostaria de comprar o relógio *${nome}* (Valor: ${preco}). Poderia me passar mais detalhes?`;
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        // Inicialização do Lucide Icons e Renderização
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+            lucide.createIcons();
+
+            // Setup Mobile Menu toggle
+            document.getElementById('menuBtn').addEventListener('click', toggleMenu);
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Renderizar Produtos no Grid
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            if (items.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = items.map(product => {
+                return `
+                <div class="bg-darkcard border border-darkborder/80 rounded-2xl overflow-hidden group hover:border-gold-500/50 transition-all duration-300 gold-border-glow flex flex-col justify-between">
+                    <div>
+                        <!-- Image Container -->
+                        <div class="relative h-64 overflow-hidden bg-darkbg cursor-pointer" onclick="openModal('${product.id}')">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <span class="absolute top-3 left-3 bg-darkbg/80 backdrop-blur-md text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full border border-gold-500/30 uppercase tracking-wider">
+                                ${product.badge}
+                            </span>
+                            <button class="absolute bottom-3 right-3 bg-darkbg/80 hover:bg-gold-500 hover:text-black text-white p-2.5 rounded-full border border-darkborder transition-colors">
+                                <i data-lucide="eye" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="p-6">
+                            <span class="text-[10px] font-semibold tracking-widest text-gray-500 uppercase">${product.category}</span>
+                            <h3 class="font-playfair text-xl font-bold text-white mt-1 mb-2 hover:text-gold-400 cursor-pointer transition-colors" onclick="openModal('${product.id}')">
+                                ${product.name}
+                            </h3>
+                            <p class="text-xs text-gray-400 line-clamp-2 leading-relaxed mb-4">
+                                ${product.description}
+                            </p>
+                            <div class="flex items-center justify-between pt-2 border-t border-darkborder/50">
+                                <div>
+                                    <span class="text-[10px] text-gray-500 block">Preço Exclusivo</span>
+                                    <span class="text-lg font-bold text-gold-400 font-sans">${product.price}</span>
+                                </div>
+                                <span class="text-[11px] text-gray-400 bg-darkbg px-2.5 py-1 rounded border border-darkborder">Aço 316L</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="p-6 pt-0 space-y-2">
+                        <button onclick="comprarRelogio('${product.name}', '${product.price}')" class="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 rounded-lg text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2 shadow-md">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            Comprar pelo WhatsApp
+                        </button>
+                        <button onclick="openModal('${product.id}')" class="w-full bg-transparent hover:bg-darkbg text-gray-400 hover:text-gray-200 py-2 rounded-lg text-xs tracking-wider uppercase transition-colors border border-transparent hover:border-darkborder">
+                            Ver Especificações
+                        </button>
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        // Filtro por categoria
+        function filterCategory(category) {
+            currentCategory = category;
+            
+            // Update buttons active style
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.className = 'filter-btn active px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-gold-gradient text-black shadow-md';
+                } else {
+                    btn.className = 'filter-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 bg-darkcard text-gray-400 border border-darkborder hover:border-gold-500/50 hover:text-white';
+                }
+            });
+
+            applyFilters();
+        }
+
+        // Busca por texto
+        function filterProducts() {
+            applyFilters();
+        }
+
+        function syncAndFilterMobile() {
+            const mobileInput = document.getElementById('searchInputMobile').value;
+            document.getElementById('searchInputDesktop').value = mobileInput;
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInputDesktop').value.toLowerCase();
+            
+            const filtered = products.filter(product => {
+                const matchesCategory = currentCategory === 'all' || product.category === currentCategory;
+                const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
+                                     product.description.toLowerCase().includes(searchTerm);
+                return matchesCategory && matchesSearch;
+            });
+
+            renderProducts(filtered);
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInputDesktop').value = '';
+            document.getElementById('searchInputMobile').value = '';
+            filterCategory('all');
+        }
+
+        // Modal Logic
+        function openModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            document.getElementById('modalImg').src = product.image;
+            document.getElementById('modalTitle').textContent = product.name;
+            document.getElementById('modalCategory').textContent = product.badge + ' | ' + product.category;
+            document.getElementById('modalPrice').textContent = product.price;
+            document.getElementById('modalDesc').textContent = product.description;
+
+            const specsList = document.getElementById('modalSpecs');
+            specsList.innerHTML = product.specs.map(spec => `<li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> ${spec}</li>`).join('');
+
+            document.getElementById('modalBuyBtn').setAttribute('onclick', `comprarRelogio('${product.name}', '${product.price}')`);
+
+            document.getElementById('productModal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        // Fechar modal ao clicar fora
+        document.getElementById('productModal').addEventListener('click', (e) => {
+            if (e.target.id === 'productModal') closeModal();
+        });
+    </script>
+</body>
+</html>
