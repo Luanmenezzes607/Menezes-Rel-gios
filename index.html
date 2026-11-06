@@ -145,7 +145,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-28 pb-16 md:pt-40 md:pb-32 overflow-hidden flex items-center min-h-[70vh]">
+    <section id="hero" class="relative pt-28 pb-1 md:pt-40 md:pb-9 overflow-hidden flex items-center min-h-[70vh]">
         <!-- Background Ambient Lights -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-10 right-10 w-72 h-72 bg-gold-600/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -189,7 +189,7 @@
     </section>
 
     <!-- Filters & Catalog Section -->
-    <section id="catalogo" class="py-16 bg-darkbg border-t border-darkborder/40 relative">
+    <section id="catalogo" class="py-7 bg-darkbg border-t border-darkborder/40 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Categories & Filter Buttons -->
@@ -342,7 +342,7 @@
                     <!-- Instagram -->
                     <li class="flex items-center gap-2">
                         <i class="fa-brands fa-instagram text-gold-500 text-base"></i>
-                        <a href="https://instagram.com" target="_blank" class="hover:text-gold-500 transition-colors">@menezesrelogios</a>
+                        <a href="https://www.Instagram.com/menezes_relogios?vrfl=aXF4OTJvYmNhazc3" target="_blank" class="hover:text-gold-500 transition-colors">@menezesrelogios</a>
                     </li>
                     
                     <!-- WhatsApp (Atendimento 24h) -->
@@ -375,7 +375,7 @@
                 name: 'Relógio Curren menezes',
                 category: 'masculino',
                 price: 'R$ 199,00',
-                image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop',
+                image: './img/curren.png' ,
                 badge: 'Melhor',
                 description: 'O Menezes Royal Chrono Gold é o ápice da sofisticação masculina. Caixa reforçada com detalhes banhados a ouro 18k e mostrador multifuncional.',
                 specs: [
@@ -391,7 +391,7 @@
                 name: 'Menezes Master Automatic Silver',
                 category: 'automatico',
                 price: 'R$ 1.890,00',
-                image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop',
+                image: './img/relogio1.png',
                 badge: 'Automático',
                 description: 'Movido pelo movimento do seu pulso. O Master Automatic possui mecanismo aparente no fundo e acabamento espelhado em aço cirúrgico.',
                 specs: [
@@ -407,7 +407,7 @@
                 name: 'Menezes Lady Diamond Rose',
                 category: 'feminino',
                 price: 'R$ 980,00',
-                image: 'https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=800&auto=format&fit=crop',
+                image: './img/relogio1.png',
                 badge: 'Lançamento',
                 description: 'Delicadeza e brilho singular. Projetado para mulheres exigentes com caixa Rose Gold e marcadores em cristais no mostrador.',
                 specs: [
@@ -423,7 +423,7 @@
                 name: 'Menezes Black Stealth Chrono',
                 category: 'cronografo',
                 price: 'R$ 1.450,00',
-                image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800&auto=format&fit=crop',
+                image: './img/relogio2.png',
                 badge: 'Cronógrafo',
                 description: 'Visual All-Black moderno com função cronógrafo de alta precisão. Ideal para o dia a dia e ocasiões especiais.',
                 specs: [
@@ -439,7 +439,7 @@
                 name: 'Menezes Grace Mother of Pearl',
                 category: 'feminino',
                 price: 'R$ 1.150,00',
-                image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop',
+                image: './img/relogio3',
                 badge: 'Exclusivo',
                 description: 'Mostrador com acabamento em madrepérola natural que reflete nuances de cor conforme a luz. Uma verdadeira joia em forma de relógio.',
                 specs: [
@@ -508,13 +508,13 @@
                 return `
                 <div class="bg-darkcard border border-darkborder/80 rounded-2xl overflow-hidden group hover:border-gold-500/50 transition-all duration-300 gold-border-glow flex flex-col justify-between">
                     <div>
-                        <!-- Image Container -->
-                        <div class="relative h-64 overflow-hidden bg-darkbg cursor-pointer" onclick="openModal('${product.id}')">
-                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <span class="absolute top-3 left-3 bg-darkbg/80 backdrop-blur-md text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full border border-gold-500/30 uppercase tracking-wider">
+                      <!-- Image Container -->
+                        <div class="relative w-full aspect-square overflow-hidden bg-darkbg cursor-pointer flex items-center justify-center" onclick="openModal('${product.id}')">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-110">
+                            <span class="absolute top-3 left-3 bg-darkbg/80 backdrop-blur-md text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full border border-gold-500/30 uppercase tracking-wider z-10">
                                 ${product.badge}
                             </span>
-                            <button class="absolute bottom-3 right-3 bg-darkbg/80 hover:bg-gold-500 hover:text-black text-white p-2.5 rounded-full border border-darkborder transition-colors">
+                            <button class="absolute bottom-3 right-3 bg-darkbg/80 hover:bg-gold-500 hover:text-black text-white p-2.5 rounded-full border border-darkborder transition-colors z-10">
                                 <i data-lucide="eye" class="w-4 h-4"></i>
                             </button>
                         </div>
