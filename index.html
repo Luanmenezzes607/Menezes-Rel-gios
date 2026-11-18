@@ -407,7 +407,7 @@
                 name: 'Menezes Lady Diamond Rose',
                 category: 'feminino',
                 price: 'R$ 980,00',
-                image: './img/relogio1.png',
+                image: './img/relogio03.jpg',
                 badge: 'Lançamento',
                 description: 'Delicadeza e brilho singular. Projetado para mulheres exigentes com caixa Rose Gold e marcadores em cristais no mostrador.',
                 specs: [
@@ -509,15 +509,16 @@
                 <div class="bg-darkcard border border-darkborder/80 rounded-2xl overflow-hidden group hover:border-gold-500/50 transition-all duration-300 gold-border-glow flex flex-col justify-between">
                     <div>
                       <!-- Image Container -->
-                        <div class="relative w-full aspect-square overflow-hidden bg-darkbg cursor-pointer flex items-center justify-center" onclick="openModal('${product.id}')">
-                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-110">
-                            <span class="absolute top-3 left-3 bg-darkbg/80 backdrop-blur-md text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full border border-gold-500/30 uppercase tracking-wider z-10">
-                                ${product.badge}
-                            </span>
-                            <button class="absolute bottom-3 right-3 bg-darkbg/80 hover:bg-gold-500 hover:text-black text-white p-2.5 rounded-full border border-darkborder transition-colors z-10">
-                                <i data-lucide="eye" class="w-4 h-4"></i>
-                            </button>
-                        </div>
+                        <!-- Substitua este trecho no seu loop de produtos -->
+                    <div class="relative w-full aspect-square overflow-hidden bg-darkbg cursor-pointer flex items-center justify-center" onclick="openModal('${product.id}')">
+                        <img src="${product.image}" alt="${product.name}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <span class="absolute top-3 left-3 bg-darkbg/80 backdrop-blur-md text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full border border-gold-500/30 uppercase tracking-wider z-10">
+                            ${product.badge}
+                        </span>
+                        <button class="absolute bottom-3 right-3 bg-darkbg/80 hover:bg-gold-500 hover:text-black text-white p-2.5 rounded-full border border-darkborder transition-colors z-10">
+                            <i data-lucide="eye" class="w-4 h-4"></i>
+                        </button>
+                    </div>
 
                         <!-- Info -->
                         <div class="p-6">
